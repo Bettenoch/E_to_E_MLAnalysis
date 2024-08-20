@@ -20,3 +20,6 @@ if __name__ == "__main__":
     housing_data = load_housing_data()
     print(housing_data.head())
     print(housing_data.info())
+    print(housing_data["ocean_proximity"].value_counts())
+    print(housing_data.describe())
+
