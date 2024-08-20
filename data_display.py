@@ -1,5 +1,7 @@
 import os
 import pandas as pd
+from test_set import split_train_test
+
 
 def load_housing_data(housing_path="datasets/housing"):
     """
@@ -18,8 +20,13 @@ def load_housing_data(housing_path="datasets/housing"):
 # Example usage
 if __name__ == "__main__":
     housing_data = load_housing_data()
-    print(housing_data.head())
-    print(housing_data.info())
-    print(housing_data["ocean_proximity"].value_counts())
-    print(housing_data.describe())
+    # print(housing_data.head())
+    # print(housing_data.info())
+    # print(housing_data["ocean_proximity"].value_counts())
+    # print(housing_data.describe())
+    train_set, test_set = split_train_test(housing_data, 0.2)
+    print(len(train_set))
+    print (len(test_set))
+    
+    
 
