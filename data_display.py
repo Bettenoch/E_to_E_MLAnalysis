@@ -1,7 +1,8 @@
 import os
 import pandas as pd
 from test_set import split_train_test
-
+# from zlib import crc32
+# from sklearn.model_selection import train_test_split
 
 def load_housing_data(housing_path="datasets/housing"):
     """
@@ -16,6 +17,8 @@ def load_housing_data(housing_path="datasets/housing"):
     csv_path = os.path.join(housing_path, "housing.csv")
     housing_data = pd.read_csv(csv_path)
     return housing_data
+
+   
 
 # Example usage
 if __name__ == "__main__":
