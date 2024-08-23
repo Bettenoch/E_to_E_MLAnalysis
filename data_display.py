@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from strat_split_data import stratified_split_data
 from test_set import split_train_test
 # from zlib import crc32
 # from sklearn.model_selection import train_test_split
@@ -27,9 +28,14 @@ if __name__ == "__main__":
     # print(housing_data.info())
     # print(housing_data["ocean_proximity"].value_counts())
     # print(housing_data.describe())
-    train_set, test_set = split_train_test(housing_data, 0.2)
-    print(len(train_set))
-    print (len(test_set))
+    # train_set, test_set = split_train_test(housing_data, 0.2)
+    # print(len(train_set))
+    # print (len(test_set))
+    
+    strat_train_set, strat_test_set = stratified_split_data(housing_data)
+    print(strat_test_set["income_cat"].value_counts()/ len(strat_train_set))
+    
+    
     
     
 
