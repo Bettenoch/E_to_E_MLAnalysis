@@ -10,8 +10,8 @@ def stratified_split_data(housing, test_size=0.2, random_state=42):
     for train_index, test_index in splitter.split(housing, housing["income_cat"]):
         strat_train_set_n = housing.iloc[train_index]
         strat_test_set_n = housing.iloc[test_index]
-        strat_splits.append([strat_train_set_n, strat_test_set_n, strat_splits])
-        strat_train_set, strat_test_set = strat_splits[0], strat_splits[0]
+        strat_splits.append([strat_train_set_n, strat_test_set_n])
+        strat_train_set, strat_test_set = strat_splits[0]
         
         return strat_train_set, strat_test_set
             
