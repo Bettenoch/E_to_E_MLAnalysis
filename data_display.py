@@ -33,8 +33,11 @@ if __name__ == "__main__":
     # print (len(test_set))
     
     strat_train_set, strat_test_set = stratified_split_data(housing_data)
-
     print(strat_test_set["income_cat"].value_counts()/ len(strat_train_set))
+    housing_train = strat_train_set.copy()
+    housing_train.plot(kind="scatter", x="longitude", y="latitude",)
+
+
     
     
     
