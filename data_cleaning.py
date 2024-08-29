@@ -33,10 +33,3 @@ if __name__ == '__main__':
     housing_cat = housing_tr[["ocean_proximity"]]
     print(housing_cat.head())
  
-    # print(housing.head())
-    # print(housing_labels.head())
-    # print(housing.info())
-    # print(housing["ocean_proximity"].value_counts())
-    # print(housing.describe())
-    # train_set, test_set = split_train_test(housing_data, 0.2)
-    # print(len(train_set))
