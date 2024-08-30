@@ -1,6 +1,7 @@
 import pandas as pd
 from training_data import training_data
 from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import OneHotEncoder
 import numpy as np
 
 def data_cleaning():
@@ -25,6 +26,14 @@ def data_cleaning():
     housing_tr = pd.concat([housing_tr, housing_cat], axis=1)
 
     return housing_tr, housing_labels
+
+def housing_cat():
+    # Extract the categorical data
+    housing_cat = training_data()[["ocean_proximity"]]
+    hot_encoder = OneHotEncoder(sparse_output=False)
+    
+    housing_cat_hot = hot_encoder.fit_transform(housing_cat)
+    return housing_cat_hot
 
 if __name__ == '__main__':
     housing_tr, housing_labels = data_cleaning()
